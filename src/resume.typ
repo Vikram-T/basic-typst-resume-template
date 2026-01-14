@@ -6,6 +6,7 @@
   personal-info-position: left,
   pronouns: "",
   location: "",
+  visa-status: "",
   email: "",
   github: "",
   linkedin: "",
@@ -92,6 +93,7 @@
           contact-item(pronouns),
           contact-item(phone),
           contact-item(location),
+          contact-item(visa-status),
           contact-item(email, link-type: "mailto:"),
           contact-item(github, link-type: "https://"),
           contact-item(linkedin, link-type: "https://"),
@@ -155,7 +157,7 @@
     generic-two-by-two(
       top-left: strong(institution),
       top-right: dates,
-      bottom-left: emph(degree),
+      bottom-left: emph([#degree#if gpa != "" [ | GPA: #gpa]]),
       bottom-right: emph(location),
     )
   } else {
@@ -163,7 +165,7 @@
     generic-two-by-two(
       top-left: strong(institution),
       top-right: location,
-      bottom-left: emph(degree),
+      bottom-left: emph([#degree#if gpa != "" [ | GPA: #gpa]]),
       bottom-right: emph(dates),
     )
   }
